@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fancy Todo</title>
+  <link rel="stylesheet" href="./css/style.css">
+
+
+  <meta name="google-signin-client_id" content="185997048100-5c8f570q4ron31anu907kc2utph4ksgs.apps.googleusercontent.com">
+  <!--script google tidak blocking karena async-->
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+</head>
+
+<body>
+
+  <!--LOGIN PAGE-->
+  <div id="login-page">
+    <div class="container">
+      <div class="left">
+        <div class="login">Login</div>
+        <div class="eula">Welcome to Fancy Todo App</div>
+        <!--sign in google button-->
+        <div style="position: relative; left: 100px;" class="g-signin2" data-onsuccess="onSignIn"></div>
+      </div>
+      <div class="right">
+        <svg viewBox="0 0 320 300">
+          
+          <defs>
+            <linearGradient inkscape:collect="always" id="linearGradient" x1="13" y1="193.49992" x2="307" y2="193.49992"
+              gradientUnits="userSpaceOnUse">
+              <stop style="stop-color:#ff00ff;" offset="0" id="stop876" />
+              <stop style="stop-color:#ff0000;" offset="1" id="stop878" />
+            </linearGradient>
+          </defs>
+          <path
+            d="m 40,120.00016 239.99984,-3.2e-4 c 0,0 24.99263,0.79932 25.00016,35.00016 0.008,34.20084 -25.00016,35 -25.00016,35 h -239.99984 c 0,-0.0205 -25,4.01348 -25,38.5 0,34.48652 25,38.5 25,38.5 h 215 c 0,0 20,-0.99604 20,-25 0,-24.00396 -20,-25 -20,-25 h -190 c 0,0 -20,1.71033 -20,25 0,24.00396 20,25 20,25 h 168.57143" />
+        </svg>
+        <form>
+          <div class="form">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="_____________________">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="_____________________">
+            <input type="submit" id="btn-submit" value="Submit">
+            <input id="register" value="or Sign Up here">
+            
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!--ALL TODOS   -->
+  <div id="all-todos">
+
+    <button id="btn-logout">LOGOUT</button>
+    <button id="btn-add-Todo">Add Todo</button>
+    
+    <section id="todos" class="cards-wrapper">
+      <!--looping data todos should be here-->
+
+    </section>
+    <div id="no-todos">
+
+    </div>
+    
+  </div>
+  
+  <!--REGISTER-->
+  <div id="form-register">
+
+    <form class="mini-form">
+      <h2>Sign Up</h2>
+      <p type="Email:"><input id="register-email" type="text" placeholder="Your email"></input></p>
+      <p type="Password:"><input id="register-password" type="password" placeholder="Your password"></input></p>
+      
+      <button class="register-new" type="submit" >Sign Up</button>
+      <button class="cancel-register" >Cancel</button>
+    </form>
+
+  </div>
+
+  <!--ADD TODO-->
+  <div id="form-add-todo">
+
+    <form class="mini-form">
+      <h2>Add Todo</h2>
+      <p type="Title:"><input id="input-title" placeholder="Fill your Todo Title here.."></input></p>
+      <p type="Description:"><input id="input-description" placeholder="Any description for Todo.."></input></p>
+      <p type="Due Date:"><input type="date" id="input-due_date" placeholder="Set due date for Todo.."></input></p>
+      <button class="add-todo" type="submit" >Add Todo</button>
+      <button class="cancel" >Cancel</button>
+    </form>
+
+  </div>
+
+    <!--EDIT TODO-->
+    <div id="form-edit-todo">
+
+      <form class="mini-form">
+        <h2>Edit Todo</h2>
+        <p type="ID:" id="edit-id" value=""></p>
+        <p type="Title:"><input id="edit-title" value=""></input></p>
+        <p type="Description:"><input id="edit-description" value=""></input></p>
+        <p type="Due Date:"><input type="date" id="edit-due_date" value=""></input></p>
+        <button class="edit-todo" type="submit" >Edit Todo</button>
+        <button class="cancel" >Cancel</button>
+      </form>
+  
+    </div>
+
+
+  <!--3rd PARTY API-->
+    <div class="api-card-container">
+      <div class="onecard u-clearfix">
+        <div class="card-body">
+          <h2 class="card-title">Your Finance Daily Dose </h2>
+          <p id="base-currency" value=""></p>
+          <p id="rate-IDR" value=""></p>
+          <p id="time-updated" value=""></p>
+          <div class="card-read">IDR</div>
+          <span class="card-tag card-circle subtle">C</span>
+        </div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDE1pvSfBz_lCiM-e9EiEBA-g83Bv84m5z_A&usqp=CAU" alt="" class="card-media" />
+      </div>
+      <div class="card-shadow"></div>
+      <button class="cancel" >Back to Home</button>
+    </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="./main.js"></script>
+</body>
+
+</html>
+
+
+
